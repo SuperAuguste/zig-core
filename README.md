@@ -1,6 +1,6 @@
-# zig-optional
+# zig-code
 
-An optional type for Zig 👿
+Core types needed for an optimal Zig experience 👿
 
 ## Usage
 

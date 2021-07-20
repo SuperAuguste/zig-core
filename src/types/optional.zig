@@ -1,4 +1,5 @@
 const std = @import("std");
+usingnamespace @import("numbers.zig");
 
 pub fn Optional(comptime T: type) type {
     return union(enum) {
@@ -37,11 +38,11 @@ pub fn nullOf(comptime T: type) Optional(T) {
 
 // Test
 
-pub fn optionalTest(z: bool) Optional(u32) {
+fn optionalTest(z: bool) Optional(u(32)) {
     return if (z) .{ .value = 12 } else .@"null";
 }
 
 test {
-    try std.testing.expectEqual(@as(u32, 12), optionalTest(true).getValue());
+    try std.testing.expectEqual(@as(u(32), 12), optionalTest(true).getValue());
     try std.testing.expect(optionalTest(false).isNull());
 }
